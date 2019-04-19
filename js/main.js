@@ -8,7 +8,8 @@ $(function () {
     });
 
     $(".btn-accept-cookie").on("click", function () {
-        $(".notification-panel").animate({top: "-200px"}, 900)
+        const inMobile = $(window).width() < 720;
+        $(".notification-panel").animate({top: "-200px"}, inMobile ? 500 : 900);
         $(".notification-panel-offset").slideUp();
     });
 
