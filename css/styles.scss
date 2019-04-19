@@ -1,0 +1,289 @@
+$notification-panel-height: 60px;
+$bg-image-height: 700px;
+
+body {
+  background-color: #e5e5e5;
+}
+
+.notification-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: $notification-panel-height;
+  font-size: 13px;
+  background-color: #FFF;
+  z-index: 10;
+
+  .content-area {
+    padding: 12px 0;
+    width: 100%;
+    max-width: 720px;
+    min-height: $notification-panel-height;
+    margin-right: auto;
+    margin-left: auto;
+
+    .text-area {
+      float: left;
+      width: calc(100% - 80px);
+
+      a {
+        color: rgb(0, 74, 117);
+        font-weight: 500;
+      }
+
+      @media screen and (max-width: 720px) {
+        width: 100%;
+        float: none;
+        padding: 0 8px;
+      }
+    }
+
+    .button-area {
+      float: right;
+      width: 80px;
+      padding-left: 12px;
+      @media screen and (max-width: 720px) {
+        width: 100%;
+        float: none;
+        padding: 4px 8px;
+      }
+    }
+  }
+}
+
+.header-area {
+  .notification-panel-offset {
+    width: 100%;
+    height: $notification-panel-height;
+  }
+
+  .bg-image {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: $bg-image-height;
+    width: 100%;
+    background-image: url("../assets/work-desk__dustin-lee.jpg");
+
+    .color-layer {
+      background-color: rgba(0, 74, 117, 0.8);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .container-header {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      .content-area {
+        position: relative;
+        height: $bg-image-height;
+
+        .logo {
+          position: absolute;
+          top: 16px;
+          left: 0;
+          z-index: 3;
+
+          img {
+            width: 50px;
+          }
+        }
+
+        .bio-info {
+          padding-top: 250px;
+          text-align: center;
+
+          p {
+            color: #FFF;
+
+            &.info-name {
+              font-size: 33px;
+              font-weight: 300;
+            }
+
+            &.info-job {
+              font-size: 22px;
+              font-weight: bold;
+            }
+
+            &.info-question {
+              font-size: 15px;
+              font-weight: 300;
+            }
+          }
+
+          .button-area {
+            padding-top: 20px;
+
+            .button-contact {
+              cursor: pointer;
+              border: 1px solid #FFF;
+              padding: 12px;
+              margin-top: 20px;
+              text-transform: uppercase;
+              color: #FFF;
+
+              &:hover {
+                background-color: #FFF;
+                color: rgb(0, 74, 117)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.help-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+
+  h2 {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  .content-help {
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.grid-option {
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 960px) {
+    width: 33.33333333%;
+    float: left;
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 955px) {
+    width: 50%;
+    float: left;
+  }
+
+  .grid-inner {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    padding: 12px;
+
+    .title {
+      font-size: 23px;
+      color: rgba(0, 0, 0, 0.7);
+
+      .icon {
+        float: right;
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    p {
+      margin-top: 8px;
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+}
+
+.container {
+  @media screen and (min-width: 1366px) {
+    width: 1366px;
+  }
+  @media screen and (max-width: 1366px) {
+    width: unset;
+  }
+}
+
+.newsletter-panel {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 640px;
+  background-color: rgba(3, 127, 193, 0.9);
+  padding: 16px 12px;
+
+  .close-newsletter {
+    padding: 0 4px;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 10px;
+  }
+
+  .title-desc {
+    color: #FFF;
+    font-size: 18px;
+  }
+
+  p {
+    margin-top: 12px;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .input-area {
+    margin-top: 12px;
+
+    @media screen and (min-width: 640px) {
+      width: 83.33333333%;
+      float: left;
+    }
+  }
+
+  .btn-area {
+    margin-top: 12px;
+
+    @media screen and (min-width: 640px) {
+      float: left;
+      width: 16.66666667%;
+      padding-left: 0;
+    }
+
+    .btn {
+      height: 34px;
+      line-height: 2;
+      font-weight: 500;
+
+      @media screen and (max-width: 639px) {
+        display: block;
+        width: unset;
+      }
+    }
+  }
+}
+
+.footer-area {
+  margin-top: 50px;
+  background-color: #050328;
+  padding: 30px 0;
+  text-align: center;
+  color: #FFF;
+  font-size: 13px;
+  font-weight: 300;
+}
+
