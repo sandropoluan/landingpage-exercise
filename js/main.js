@@ -19,12 +19,11 @@ $(function () {
 
 
     var lastScrollTop = 0;
-    $(window).scroll(function (event) {
+    $(window).scroll(function () {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
             var docHeight = $(document).height();
             var oneThird = docHeight / 3;
-            //var scrollBottom = docHeight - $(window).height() - $(window).scrollTop();
             var isReachBottom = $(window).scrollTop() + $(window).height() > $(document).height() - 10;
             if (isReachBottom) {
                 console.log('Reach Bottom');
@@ -83,7 +82,7 @@ function setOffsetHeight() {
 var timer;
 
 function setGridHeightEqual() {
-    //I dont's use Flex Box due to browser compatibilities
+    //I don't use Flex Box due to browser compatibilities
     var maxHeight = 0;
 
     clearTimeout(timer);
