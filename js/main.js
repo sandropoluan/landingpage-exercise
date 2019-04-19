@@ -17,16 +17,30 @@ $(function () {
         $(".newsletter-panel").slideToggle();
     });
 
+
     var lastScrollTop = 0;
     $(window).scroll(function (event) {
         var st = $(this).scrollTop();
         if (st > lastScrollTop) {
             var docHeight = $(document).height();
-            if (st > docHeight / 3 && isAllowShowNewsletterPanel()) {
+            var oneThird = docHeight / 3;
+            //var scrollBottom = docHeight - $(window).height() - $(window).scrollTop();
+            var isReachBottom = $(window).scrollTop() + $(window).height() > $(document).height() - 10;
+            if (isReachBottom) {
+                console.log('Reach Bottom');
+            }
+            if ((st > oneThird || isReachBottom) && isAllowShowNewsletterPanel()) {
                 showNewsletterPanel();
             }
         }
         lastScrollTop = st;
+    });
+
+    $(window).load(function () {
+        //if page is not scrollable, show newsletter
+        if ($(document).height() < $(window).height() && isAllowShowNewsletterPanel()) {
+            showNewsletterPanel();
+        }
     });
 });
 
@@ -85,4 +99,13 @@ function setGridHeightEqual() {
             $(".grid-inner").css({height: maxHeight});
         }
     }, 100);
+}
+
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
 }
