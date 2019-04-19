@@ -50,7 +50,7 @@ function isAllowShowNewsletterPanel() {
     }
 
     var remain = max - second;
-    console.log('Time remain for next NL Panel', Math.floor(remain / 60) + ':' + remain % 60);
+    console.log('Time remain for next NL Panel to show up ', Math.floor(remain / 60) + ':' + remain % 60);
     return false;
 }
 
